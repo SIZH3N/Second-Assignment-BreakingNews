@@ -1,62 +1,65 @@
-# Project Title
+# News App
 
-Simple overview of use/purpose.
+A simple Java-based **CLI application** that fetches and displays news articles using the NewsAPI. The app allows users to view a list of news titles and select a specific article to see its full details.
 
-## Description
+## Table of Contents
 
-An in-depth paragraph about your project and overview of use.
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+- [Project Structure](#project-structure)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
 
-## Getting Started
 
-### Dependencies
+## Features
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+- Fetches news articles from the NewsAPI.
+- Displays a list of news titles.
+- Allows users to view detailed information about a selected news article.
+- Uses `org.json` for JSON parsing and `HttpClient` for making HTTP requests.
 
-### Installing
+## Prerequisites
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+- Java 11 or higher  
+- Gradle  
+- A valid NewsAPI key (replace the placeholder in the code with your API key)
 
-### Executing program
+## Setup
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
 
-## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+1. Add your NewsAPI key in the `Infrastructure` class:
+   ```java
+   String api = "your_api_key_here";
+   ```
 
-## Authors
+2. Build the project using Gradle:
+   ```bash
+   gradle build
+   ```
 
-Contributors names and contact info
+3. Run the application:
+   ```bash
+   gradle run
+   ```
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+## Project Structure
 
-## Version History
+- `src/main/java/AP/News.java`: Represents a news article with attributes like title, author, description, etc.
+- `src/main/java/AP/Infrastructure.java`: Handles fetching and parsing news data from the NewsAPI.
+- `src/main/java/AP/Main.java`: Contains the main menu and application logic.
+- `build.gradle`: Gradle build file for managing dependencies and configurations.
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+## Dependencies
 
-## License
+The project uses the following dependencies:
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+- `org.json:json:20211205` – For JSON parsing.
+- `org.junit.jupiter:junit-bom:5.9.1` – For testing (if needed).
 
-## Acknowledgments
+## Usage
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+1. Run the application.
+2. View the list of news titles.
+3. Enter the number corresponding to a news article to view its full details.
